@@ -70,6 +70,8 @@
 		E415D1851E5458BC0097AB72 /* invoiceTable.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = invoiceTable.html; sourceTree = "<group>"; };
 		E415D1871E545E290097AB72 /* PrintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintViewController.h; sourceTree = "<group>"; };
 		E415D1881E545E290097AB72 /* PrintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintViewController.m; sourceTree = "<group>"; };
+		E46416131E569090003B7BC1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		E46416141E569090003B7BC1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +366,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E415D14C1E53F7FE0097AB72 /* Base */,
+				E46416131E569090003B7BC1 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E415D1541E53F7FE0097AB72 /* Base */,
+				E46416141E569090003B7BC1 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -383,6 +387,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -430,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

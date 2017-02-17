@@ -3,202 +3,202 @@
 <html>
     <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-            <title>A simple, clean, and responsive HTML invoice template</title>
-            <style>
-                .invoice-box{
-                    max-width:800px;
-                    margin:auto;
-                    padding:30px;
-                    /*border:1px solid #eee;*/
-                    /*box-shadow:0 0 10px rgba(0, 0, 0, .15); */
-                    font-size:16px;
-                    line-height:24px;
-                    font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-                    color:#555;
-                    
-                }
-            
-            .invoice-box table{
-                width:100%;
-                line-height:inherit;
-                text-align:left;
+        <title>A simple, clean, and responsive HTML invoice template</title>
+        <style>
+            .invoice-box{
+                max-width:800px;
+                margin:auto;
+                padding:30px;
+                /*border:1px solid #eee;*/
+                /*box-shadow:0 0 10px rgba(0, 0, 0, .15); */
+                font-size:16px;
+                line-height:24px;
+                font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+                color:#555;
+                
             }
-            
-            .invoice-box table td{
-                padding:5px;
-                vertical-align:top;
-            }
-            
-            .invoice-box table tr td:nth-child(2){
-                text-align:right;
-            }
-            
+        
+        .invoice-box table{
+            width:100%;
+            line-height:inherit;
+            text-align:left;
+        }
+        
+        .invoice-box table td{
+            padding:5px;
+            vertical-align:top;
+        }
+        
+        .invoice-box table tr td:nth-child(2){
+            text-align:right;
+        }
+        
+        .invoice-box table tr.top table td{
+            padding-bottom:20px;
+        }
+        
+        .invoice-box table tr.top table td.title{
+            font-size:45px;
+            line-height:45px;
+            color:#333;
+        }
+        
+        .invoice-box table tr.information table td{
+            padding-bottom:40px;
+        }
+        
+        .invoice-box table tr.heading td{
+            background:#eee;
+            border-bottom:1px solid #ddd;
+            font-weight:bold;
+        }
+        
+        .invoice-box table tr.details td{
+            padding-bottom:20px;
+        }
+        
+        .invoice-box table tr.item td{
+            border-bottom:1px solid #eee;
+        }
+        
+        .invoice-box table tr.item.last td{
+            border-bottom:none;
+        }
+        
+        .invoice-box table tr.total td:nth-child(2){
+            border-top:2px solid #eee;
+            font-weight:bold;
+        }
+        
+        @media only screen and (max-width: 600px) {
             .invoice-box table tr.top table td{
-                padding-bottom:20px;
-            }
-            
-            .invoice-box table tr.top table td.title{
-                font-size:45px;
-                line-height:45px;
-                color:#333;
+                width:100%;
+                display:block;
+                text-align:center;
             }
             
             .invoice-box table tr.information table td{
-                padding-bottom:40px;
+                width:100%;
+                display:block;
+                text-align:center;
             }
-            
-            .invoice-box table tr.heading td{
-                background:#eee;
-                border-bottom:1px solid #ddd;
-                font-weight:bold;
-            }
-            
-            .invoice-box table tr.details td{
-                padding-bottom:20px;
-            }
-            
-            .invoice-box table tr.item td{
-                border-bottom:1px solid #eee;
-            }
-            
-            .invoice-box table tr.item.last td{
-                border-bottom:none;
-            }
-            
-            .invoice-box table tr.total td:nth-child(2){
-                border-top:2px solid #eee;
-                font-weight:bold;
-            }
-            
-            @media only screen and (max-width: 600px) {
-                .invoice-box table tr.top table td{
-                    width:100%;
-                    display:block;
-                    text-align:center;
-                }
-                
-                .invoice-box table tr.information table td{
-                    width:100%;
-                    display:block;
-                    text-align:center;
-                }
-            }
-            
-            </style>
-            </head>
-    <body  >
-        <div class="invoice-box" style="line-height:190%" >
-        <!--标题-->
-  <h1 align="center">询问笔录</h1>
-	<!--第一行，时间-->
-    
-    <div>
-        时间
-        <u>#XWBLStartYear#</u>年
-        <u>#XWBLStartMonth#</u>月
-        <u>#XWBLStartDay#</u>日
-        <u>#XWBLStartHour#</u>时
-        <u>#XWBLStartMinute#</u>分至
-        <u>#XWBLEndYear#</u>年
-        <u>#XWBLEndMonth#</u>月
-        <u>#XWBLEndDay#</u>日
-        <u>#XWBLEndHour#</u>时
-        <u>#XWBLEndMinute#</u>分
-    </div>
-
-    <!--第二行，地点-->
-    <div>
-        地点 <u>#XWBLAddress#</u>
-    </div>   
-  
-    <!--第三行，询问人、工作单位-->
-    <div>
-        询问人 <u>#XWR1#</u>、<u>#XWR2#</u> 工作单位 <u>#XWRWorkingUnit#</u>
-    </div>   
-
-    <!--第四行，记录人、工作单位-->
-    <div>
-        记录人 <u>#JLR#</u> 工作单位 <u>#JLRWorkingUnit#</u>
-    </div>   
-
-    <!--第五行，被询问人、性别、年龄、出生日期-->
-    <div>
-        被询问人 <u>#BXWR1#</u> 性别 <u>#BXWRSex#</u> 年龄 <u>#BXWRAge#</u> 出生日期 <u>#BXWRBirthday#</u>
-    </div>   
-
-    <!--第六行，身份证件种类及号码、是否人大代表-->
-    <div>
-        身份证件种类及号码 <u>#ShenFenZheng#</u>
-        <input type="checkbox" name="checkbox1" #RenDaDaiBiaoYes#> 是
-            <input type="checkbox" name="checkbox2" #RenDaDaiBiaoNo#> 否人大代表
-    </div>   
-
-    <!--第七行，现住址-->
-    <div>
-        现住址 <u>#XianZhuDiZhi#</u>
-    </div>   
-
-    <!--第八行，联系方式-->
-    <div>
-        联系方式 <u>#LianXiFangShi#</u>
-    </div>   
-
-    <!--第九行，户籍所在地-->
-    <div>
-        户籍所在地 <u>#HuJiSuoZaiDi#</u>
-    </div>   
-    <!--第九.1行，户籍所在地-->
-    <div>
-        <u>#HuJiSuoZaiDi111#</u>
-    </div>
-    <!--第十行，口头传唤时间-->
-    <div>
-        （口头传唤的被询问人于  
-        <u>#KTCHStartMonth#</u> 月
-        <u>#KTCHStartDay#</u> 日
-        <u>#KTCHStartHour#</u> 时
-        <u>#KTCHStartMinute#</u> 分到达，
-        <u>#KTCHEndMonth#</u> 月
-        <u>#KTCHEndDay#</u> 日
-        <u>#KTCHEndHour#</u> 时
-        <u>#KTCHEndMinute#</u> 分离开，本人签名确认：
-        <u>#KTCHSign#</u>)
-    </div>   
-
-    <!--第十一行，确认签名-->
-<!--    <div> -->
-<!--        <u>#KTCHEndMonth#</u>月-->
-<!--        <u>#KTCHEndDay#</u>日-->
-<!--        <u>#KTCHEndHour#</u>时-->
-<!--        <u>#KTCHEndMinute#</u>分离开，本人签名确认：-->
-<!--        <u>#KTCHSign#</u>)-->
-<!--    </div>-->
-
-    <!--第十二行，口头传唤/被扭送/自动投案-->
-    <div>
-        (口头传唤/被扭送/自动投案的被询问人/询问人于
-        <u>#ZDTAStartMonth#</u> 月
-        <u>#ZDTAStartDay#</u> 日
-        <u>#ZDTAStartHour#</u> 时
-        <u>#ZDTAStartMinute#</u> 分到达，
-        <u>#ZDTAEndMonth#</u> 月
-        <u>#ZDTAEndDay#</u> 日
-        <u>#ZDTAEndHour#</u> 时
-        <u>#ZDTAEndMinute#</u> 分离开，本人签名确认：
-        <u>#ZDTASign#</u>)
-    </div>
-    
-    <!--第十三行，其他-->
-    <table width="100%"　border="0" cellspacing="0" cellpadding="0" style="TABLE-LAYOUT: fixed; WORD-divEAK: diveak-all">
-        <tr>
-            <td style="WORD-divEAK: diveak-all; WORD-WRAP: diveak-word;line-height:200%">
-                <div> <u>#OtherInfo#</u><u>基督教的基督教的基督教的巨大的基督教的聚集地的渐渐地就的男的女的男的女的呢</u></div>
-            </td>
-        </tr> 
- 
-        </div>
+        }
         
-    
-
-</body>
+            </style>
+        </head>
+    <body  >
+        <div class="invoice-box" style="line-height:190%;bgcolor:red" >
+            <!--标题-->
+            <h1 align="center">询问笔录</h1>
+            <!--第一行，时间-->
+            
+            <div>
+                时间
+                <u>#XWBLStartYear#</u>年
+                <u>#XWBLStartMonth#</u>月
+                <u>#XWBLStartDay#</u>日
+                <u>#XWBLStartHour#</u>时
+                <u>#XWBLStartMinute#</u>分至
+                <u>#XWBLEndYear#</u>年
+                <u>#XWBLEndMonth#</u>月
+                <u>#XWBLEndDay#</u>日
+                <u>#XWBLEndHour#</u>时
+                <u>#XWBLEndMinute#</u>分
+            </div>
+            
+            <!--第二行，地点-->
+            <div>
+                地点 <u>#XWBLAddress#</u>
+            </div>
+            
+            <!--第三行，询问人、工作单位-->
+            <div>
+                询问人 <u>#XWR1#</u>、<u>#XWR2#</u> 工作单位 <u>#XWRWorkingUnit#</u>
+            </div>
+            
+            <!--第四行，记录人、工作单位-->
+            <div>
+                记录人 <u>#JLR#</u> 工作单位 <u>#JLRWorkingUnit#</u>
+            </div>
+            
+            <!--第五行，被询问人、性别、年龄、出生日期-->
+            <div>
+                被询问人 <u>#BXWR1#</u> 性别 <u>#BXWRSex#</u> 年龄 <u>#BXWRAge#</u> 出生日期 <u>#BXWRBirthday#</u>
+            </div>
+            
+            <!--第六行，身份证件种类及号码、是否人大代表-->
+            <div>
+                身份证件种类及号码 <u>#ShenFenZheng#</u>
+                <input type="checkbox" name="checkbox1" #RenDaDaiBiaoYes#> 是
+                    <input type="checkbox" name="checkbox2" #RenDaDaiBiaoNo#> 否人大代表
+                        </div>
+            
+            <!--第七行，现住址-->
+            <div>
+                现住址 <u>#XianZhuDiZhi#</u>
+            </div>
+            
+            <!--第八行，联系方式-->
+            <div>
+                联系方式 <u>#LianXiFangShi#</u>
+            </div>
+            
+            <!--第九行，户籍所在地-->
+            <div>
+                户籍所在地 <u>#HuJiSuoZaiDi#</u>
+            </div>
+            <!--第九.1行，户籍所在地-->
+            <div>
+                <u>#HuJiSuoZaiDi111#</u>
+            </div>
+            <!--第十行，口头传唤时间-->
+            <div>
+                （口头传唤的被询问人于
+                <u>#KTCHStartMonth#</u> 月
+                <u>#KTCHStartDay#</u> 日
+                <u>#KTCHStartHour#</u> 时
+                <u>#KTCHStartMinute#</u> 分到达，
+                <u>#KTCHEndMonth#</u> 月
+                <u>#KTCHEndDay#</u> 日
+                <u>#KTCHEndHour#</u> 时
+                <u>#KTCHEndMinute#</u> 分离开，本人签名确认：
+                <u>#KTCHSign#</u>)
+            </div>
+            
+            <!--第十一行，确认签名-->
+            <!--    <div> -->
+            <!--        <u>#KTCHEndMonth#</u>月-->
+            <!--        <u>#KTCHEndDay#</u>日-->
+            <!--        <u>#KTCHEndHour#</u>时-->
+            <!--        <u>#KTCHEndMinute#</u>分离开，本人签名确认：-->
+            <!--        <u>#KTCHSign#</u>)-->
+            <!--    </div>-->
+            
+            <!--第十二行，口头传唤/被扭送/自动投案-->
+            <div>
+                (口头传唤/被扭送/自动投案的被询问人/询问人于
+                <u>#ZDTAStartMonth#</u> 月
+                <u>#ZDTAStartDay#</u> 日
+                <u>#ZDTAStartHour#</u> 时
+                <u>#ZDTAStartMinute#</u> 分到达，
+                <u>#ZDTAEndMonth#</u> 月
+                <u>#ZDTAEndDay#</u> 日
+                <u>#ZDTAEndHour#</u> 时
+                <u>#ZDTAEndMinute#</u> 分离开，本人签名确认：
+                <u>#ZDTASign#</u>)
+            </div>
+            
+            <!--第十三行，其他-->
+            <table width="100%"　border="0" cellspacing="0" cellpadding="0" style="TABLE-LAYOUT: fixed; WORD-divEAK: diveak-all">
+                <tr>
+                    <td style="WORD-divEAK: diveak-all; WORD-WRAP: diveak-word;line-height:200%">
+                        <div> <u>#OtherInfo#</u><u>基督教的基督教的基督教的巨大的基督教的聚集地的渐渐地就的男的女的男的女的呢</u></div>
+                    </td>
+                </tr>
+                
+                </div>
+        
+        
+        
+    </body>
 </html>
