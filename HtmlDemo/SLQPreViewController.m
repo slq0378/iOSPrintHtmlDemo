@@ -50,6 +50,9 @@
     NSLog(@"打印");
     [self printWebPage];
 }
+
+#pragma mark - 打印html
+// 打印html
 - (void)printWebPage
 {
     UIPrintInteractionController *controller = [UIPrintInteractionController sharedPrintController];
@@ -80,18 +83,17 @@
     // 显示页码范围
     controller.showsPageRange = YES;
     
-    // This code uses a custom UIPrintPageRenderer so that it can draw a header and footer.
+    // 预览设置
     SLQPrintPageRenderer *myRenderer = [[SLQPrintPageRenderer alloc] init];
-    // The APLPrintPageRenderer class provides a jobtitle that it will label each page with.
-//    myRenderer.jobTitle = printInfo.jobName;
+
     // To draw the content of each page, a UIViewPrintFormatter is used.
+    // 生成html格式
     UIViewPrintFormatter *viewFormatter = [self.webView viewPrintFormatter];
-    
     [myRenderer addPrintFormatter:viewFormatter startingAtPageAtIndex:0];
-    // Set our custom renderer as the printPageRenderer for the print job.
+    // 渲染html
     controller.printPageRenderer = myRenderer;
     
-    [controller presentAnimated:YES completionHandler:completionHandler];  // iPhone
+    [controller presentAnimated:YES completionHandler:completionHandler];
 }
 
 - (void)selectEmailAction:(UIBarButtonItem *)btnItem {

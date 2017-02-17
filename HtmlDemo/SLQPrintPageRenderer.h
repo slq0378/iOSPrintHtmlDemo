@@ -9,12 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface SLQPrintPageRenderer : UIPrintPageRenderer
-/**<#注释#>*/
+/**A4纸宽度*/
 @property (nonatomic, assign) CGFloat A4PageWidth;// 595.2
-/**<#注释#>*/
+/**A4纸高度*/
 @property (nonatomic, assign) CGFloat A4PageHeight;//841.8
-
-
-
 
 @end

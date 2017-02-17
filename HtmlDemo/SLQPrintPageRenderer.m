@@ -6,42 +6,25 @@
 //  Copyright © 2017年 song. All rights reserved.
 //
 
-/*
- Setting SIMPLE_LAYOUT to 1 uses a layout that involves less application code and
- produces a layout where the web view content has margins that are relative to
- the imageable area of the paper.
- 
- Setting SIMPLE_LAYOUT to 0 uses a layout that involves more computation and setup
- and produces a layout where the webview content is inset 1/2 from the edge of the
- paper (assuming it can be without being clipped). See the comments in
- APLPrintPageRenderer.m immediately after #if !SIMPLE_LAYOUT.
- */
+
 #define SIMPLE_LAYOUT 1
 
-// The point size to use for the height of the text in the
-// header and footer.
+// 页眉页脚文本高度
 #define HEADER_FOOTER_TEXT_HEIGHT     10
 
-// The left edge of text in the header will be offset from the left
-// edge of the imageable area of the paper by HEADER_LEFT_TEXT_INSET.
+// 页眉页脚文字左边距
 #define HEADER_LEFT_TEXT_INSET	      20
 
-// The header and footer will be inset this much from the edge of the
-// imageable area just to avoid butting up right against the edge that
-// will be clipped.
+// 填充区域
 #define HEADER_FOOTER_MARGIN_PADDING  5
 
-// The right edge of text in the footer will be offset from the right
-// edge of the imageable area of the paper by FOOTER_RIGHT_TEXT_INSET.
+// 页眉页脚文字右边距
 #define FOOTER_RIGHT_TEXT_INSET	      20
 
-
-
-// The header and footer content will be no closer than this distance
-// from the web page content on the printed page.
+// 页眉页脚距离文档的最小高度
 #define MIN_HEADER_FOOTER_DISTANCE_FROM_CONTENT	10
 
-// Enforce a minimum 1/2 inch margin on all sides.
+// 最小边距
 #define MIN_MARGIN 36
 
 
@@ -69,16 +52,6 @@
     }
     return self;
 }
-
-
-/*
- For the case where we are not doing SIMPLE_LAYOUT, this code does the following:
- 1) Makes the minimum margin for the content of the content portion of the printout (i.e. the webpage) at least 1/4" away from the edge of the paper. If the hardware margins of the paper are greater than that, then the hardware margins will force the content margins to be as large as they allow.
- 2) Because this format is relative to the edge of the sheet rather than the imageable area, we need to compute these values once we know the paper size and printableRect. This is known in the numberOfPages method and that is the reason this code overrides that method.
- 3) Since the header and footer heights of a UIPrintFormatter plays a part in determining height of of the content area, this code computes those heights, taking into account that we want the minimum 1/4" margin on the content.
- 4) This code also enforces a minimum distance (MIN_HEADER_FOOTER_DISTANCE_FROM_CONTENT) between the header and footer and the content area.
- 5) Note that the insets used for the contentInsets property of a UIPrintFormatter are relative to the imageable area of the paper being printed upon. The header and footer height are also imposed relative to the edge of the top and bottom hardware margin.
- */
 
 
 /*
@@ -115,6 +88,7 @@ static CGFloat HeaderFooterHeight(CGFloat imageableAreaMargin, CGFloat textHeigh
 
 /*
  Override numberOfPages so we can compute the values for our UIPrintFormatter based on the paper used for the print job. When this is called, self.paperRect and self.printableRect reflect the paper size and imageable area of the destination paper.
+ 重写改方法，计算页数
  */
 - (NSInteger)numberOfPages
 {
@@ -168,6 +142,8 @@ static CGFloat HeaderFooterHeight(CGFloat imageableAreaMargin, CGFloat textHeigh
     pageRange = range;
     [super prepareForDrawingPages:range];
 }
+
+// 绘制页眉
 - (void)drawHeaderForPageAtIndex:(NSInteger)pageIndex inRect:(CGRect)headerRect {
     // Specify the header text.
     NSString *headerText = @"第1次";
@@ -186,9 +162,9 @@ static CGFloat HeaderFooterHeight(CGFloat imageableAreaMargin, CGFloat textHeigh
     // Draw the header text.
     [headerText drawAtPoint:CGPointMake(pointX, pointY) withAttributes:textAttributes];
 }
-
+// 绘制页脚
 - (void)drawFooterForPageAtIndex:(NSInteger)pageIndex inRect:(CGRect)footerRect {
-    NSString *footerText = [NSString stringWithFormat:@"第 %lu 页 共 %lu 页",
+    NSString *footerText = [NSString stringWithFormat:@"第%lu页共%lu页",
                             pageIndex+1 - pageRange.location, (unsigned long)pageRange.length];
     NSDictionary *textAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize: 15] ,NSForegroundColorAttributeName:[UIColor blackColor],NSKernAttributeName:@7.5};
     CGSize textSize = [self getTextSize:footerText font:[UIFont systemFontOfSize:15] att:textAttributes];
@@ -210,6 +186,7 @@ static CGFloat HeaderFooterHeight(CGFloat imageableAreaMargin, CGFloat textHeigh
     CGContextStrokePath(context);
     
 }
+// 计算字符串尺寸
 - (CGSize )getTextSize:(NSString *)text font:(UIFont *)font att:(NSDictionary *)att {
 
     UILabel *testLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.paperRect.size.width, self.footerHeight)];
