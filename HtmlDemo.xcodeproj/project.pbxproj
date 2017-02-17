@@ -23,6 +23,7 @@
 		E415D1841E5402CC0097AB72 /* HtmlTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D1831E5402CC0097AB72 /* HtmlTool.m */; };
 		E415D1861E5458BD0097AB72 /* invoiceTable.html in Resources */ = {isa = PBXBuildFile; fileRef = E415D1851E5458BC0097AB72 /* invoiceTable.html */; };
 		E415D1891E545E290097AB72 /* SLQPrintPageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D1881E545E290097AB72 /* SLQPrintPageRenderer.m */; };
+		E46428601E56E927003B7BC1 /* SLQPDFPreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E464285F1E56E927003B7BC1 /* SLQPDFPreViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		E415D1881E545E290097AB72 /* SLQPrintPageRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLQPrintPageRenderer.m; sourceTree = "<group>"; };
 		E46416131E569090003B7BC1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		E46416141E569090003B7BC1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		E464285E1E56E927003B7BC1 /* SLQPDFPreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLQPDFPreViewController.h; sourceTree = "<group>"; };
+		E464285F1E56E927003B7BC1 /* SLQPDFPreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLQPDFPreViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 		E415D1411E53F7FE0097AB72 /* HtmlDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E464285E1E56E927003B7BC1 /* SLQPDFPreViewController.h */,
+				E464285F1E56E927003B7BC1 /* SLQPDFPreViewController.m */,
 				E415D17F1E53FB9A0097AB72 /* SLQPreViewController.h */,
 				E415D1801E53FB9A0097AB72 /* SLQPreViewController.m */,
 				E415D1451E53F7FE0097AB72 /* AppDelegate.h */,
@@ -324,6 +329,7 @@
 				E415D1891E545E290097AB72 /* SLQPrintPageRenderer.m in Sources */,
 				E415D14A1E53F7FE0097AB72 /* ViewController.m in Sources */,
 				E415D1811E53FB9A0097AB72 /* SLQPreViewController.m in Sources */,
+				E46428601E56E927003B7BC1 /* SLQPDFPreViewController.m in Sources */,
 				E415D1471E53F7FE0097AB72 /* AppDelegate.m in Sources */,
 				E415D1441E53F7FE0097AB72 /* main.m in Sources */,
 				E415D1501E53F7FE0097AB72 /* HtmlDemo.xcdatamodeld in Sources */,

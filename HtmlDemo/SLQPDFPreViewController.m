@@ -1,5 +1,5 @@
 //
-//  SLQPreViewController
+//  SLQPDFPreViewController
 //  NanhaiPoliceM
 //
 //  Created by MrSong on 17/1/16.
@@ -10,19 +10,19 @@
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 #define NavigationBarHeight 64
 
-#import "SLQPreViewController.h"
+#import "SLQPDFPreViewController.h"
 #import "SLQPrintPageRenderer.h"
 #import <MessageUI/MessageUI.h>
 #import <UIKit/UIPrinterPickerController.h>
 
-@interface SLQPreViewController ()<UIWebViewDelegate,MFMailComposeViewControllerDelegate>
+@interface SLQPDFPreViewController ()<UIWebViewDelegate,MFMailComposeViewControllerDelegate>
 /**<#注释#>*/
 @property (nonatomic, strong) NSURLRequest *res;
 /**<#注释#>*/
 @property (nonatomic, strong) NSString *pdfFileName;
 @end
 
-@implementation SLQPreViewController
+@implementation SLQPDFPreViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,7 +34,7 @@
     web.delegate = self;
     web.backgroundColor = [UIColor greenColor];
     web.scalesPageToFit = YES;
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"打印" style:UIBarButtonItemStylePlain target:self action:@selector(selectRightAction:)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"PDF" style:UIBarButtonItemStylePlain target:self action:@selector(selectRightAction:)];
     UIBarButtonItem *rightButton1 = [[UIBarButtonItem alloc] initWithTitle:@"邮件" style:UIBarButtonItemStylePlain target:self action:@selector(selectEmailAction:)];
     self.navigationItem.rightBarButtonItems = @[rightButton,rightButton1];
     // Do any additional setup after loading the view.
@@ -47,7 +47,11 @@
 }
 
 - (void)selectRightAction:(UIBarButtonItem *)btnItem {
-    NSLog(@"打印");
+    NSLog(@"PDF");
+    
+//    [self exportPDF];
+//    NSData *pdfData = [NSData dataWithContentsOfFile:self.pdfFileName];
+//    [self.webView loadData:pdfData MIMEType:@"application/pdf" textEncodingName:@"application/pdf" baseURL:[NSURL URLWithString:self.pdfFileName]];
     [self printWebPage];
 }
 - (void)printWebPage
@@ -96,13 +100,72 @@
 
 - (void)selectEmailAction:(UIBarButtonItem *)btnItem {
     NSLog(@"Email");
-    [self exportHtml];
+    [self exportPDF];
     [self displayComposerSheet];
     
 }
 
-- (void)exportHtml {
+- (void)exportPDF {
+    //UIPrintFormatter
+    // UIPrintFormatter是打印格式的抽象基类。该类能够对打印内容进行布局，打印系统会自动将与打印格式绑定的内容打印出来。
+    SLQPrintPageRenderer *vc = [[SLQPrintPageRenderer alloc] init];
+    UIMarkupTextPrintFormatter *printFor = [[UIMarkupTextPrintFormatter alloc] initWithMarkupText:self.url];
+//    printFor.markupText = @"<html>\
+//    <body>\
+//    <h1>My First Heading</h1>\
+//    <p>My first paragraph.</p>\
+//    </body>\
+//    </html>";
+    [vc addPrintFormatter:printFor startingAtPageAtIndex:0];
+    NSData *pdfData = [self drawPDFUsingPrintPageRenderer:vc];
     
+ 
+    NSString *pdfFilename = [[self documentsDirectory] stringByAppendingString:@"/Invoice\(invoiceNumber).pdf"];
+    [pdfData writeToFile:pdfFilename atomically:YES];
+    self.pdfFileName = pdfFilename;
+    NSLog(@"文件路径：%@",pdfFilename);
+}
+
+- (NSData *)drawPDFUsingPrintPageRenderer:(SLQPrintPageRenderer *)pageRenter {
+    NSDictionary *textAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:30] ,NSForegroundColorAttributeName:[UIColor blackColor],NSKernAttributeName:@10};
+    NSMutableData *data = [[NSMutableData alloc] init];
+
+    UIGraphicsBeginPDFContextToData(data, CGRectZero, nil);
+
+    UIGraphicsBeginPDFPage();
+    NSLog(@"%@",NSStringFromCGRect(UIGraphicsGetPDFContextBounds()));
+    
+    [pageRenter prepareForDrawingPages:NSMakeRange(0, 1)];
+    [pageRenter drawPageAtIndex:0 inRect:UIGraphicsGetPDFContextBounds()];
+//    [pageRenter drawContentForPageAtIndex:0 inRect:UIGraphicsGetPDFContextBounds()];
+    [@"哈哈哈" drawAtPoint:CGPointMake(100, 100) withAttributes:textAttributes];
+    UIGraphicsEndPDFContext();
+    
+    return data;
+}
+
+
+-(NSString*)documentsDirectory{
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths firstObject];
+    return documentsDirectory;
+}
+- (void)popBack:(UIGestureRecognizer *)swipe {
+    [self back];
+}
+
+- (void)navigationClickLeft {
+    [self back];
+}
+
+- (void)back {
+    if ([self.webView canGoBack]) {
+        [self.webView goBack];
+    }else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 // 始发送请求（加载数据）时调用这个方法
@@ -125,8 +188,6 @@
 }
 
 
-#pragma mark - 设置邮件基本信息
-// 设置邮件基本信息
 -(void)displayComposerSheet
 {
     MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
@@ -141,20 +202,17 @@
     
     //设置附件为pdf
     NSData *myData = [NSData dataWithContentsOfFile:self.pdfFileName];
-    if (myData) {
-        [picker addAttachmentData:myData mimeType:@"application/pdf" fileName:@"HTMLDemo"];
-    }
+    [picker addAttachmentData:myData mimeType:@"application/pdf"
+                     fileName:@"HTMLDemo"];
     
     // 设置邮件发送内容
-    NSString *emailBody = @"哈哈尽快哈就合法进口分哈萨克黄齑淡饭";
-    [picker setMessageBody:emailBody isHTML:NO];
+//    NSString *emailBody = @"IOS中的个人博客地址:http://www.cnblogs.com/xiaofeixiang";
+//    [picker setMessageBody:emailBody isHTML:NO];
     
     //邮件发送的模态窗口
-    [self presentViewController:picker animated:YES completion:nil];
+    [self presentModalViewController:picker animated:YES];
 }
 
-
-#pragma mark - MFMailComposeViewControllerDelegate
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     switch (result)
