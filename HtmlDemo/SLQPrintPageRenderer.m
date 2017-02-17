@@ -46,9 +46,9 @@
 
 
 
-#import "PrintViewController.h"
+#import "SLQPrintPageRenderer.h"
 
-@implementation PrintViewController
+@implementation SLQPrintPageRenderer
 {
     NSRange pageRange;
 }

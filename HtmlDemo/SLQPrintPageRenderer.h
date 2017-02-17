@@ -1,5 +1,5 @@
 //
-//  PrintViewController.h
+//  SLQPrintPageRenderer
 //  HtmlDemo
 //
 //  Created by MrSong on 17/2/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PrintViewController : UIPrintPageRenderer
+@interface SLQPrintPageRenderer : UIPrintPageRenderer
 /**<#注释#>*/
 @property (nonatomic, assign) CGFloat A4PageWidth;// 595.2
 /**<#注释#>*/

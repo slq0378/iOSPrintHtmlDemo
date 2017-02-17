@@ -19,10 +19,10 @@
 		E415D17C1E53F83D0097AB72 /* invoice.html in Resources */ = {isa = PBXBuildFile; fileRef = E415D1791E53F83D0097AB72 /* invoice.html */; };
 		E415D17D1E53F83D0097AB72 /* last_item.html in Resources */ = {isa = PBXBuildFile; fileRef = E415D17A1E53F83D0097AB72 /* last_item.html */; };
 		E415D17E1E53F83D0097AB72 /* single_item.html in Resources */ = {isa = PBXBuildFile; fileRef = E415D17B1E53F83D0097AB72 /* single_item.html */; };
-		E415D1811E53FB9A0097AB72 /* MMNormalQuestionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D1801E53FB9A0097AB72 /* MMNormalQuestionController.m */; };
+		E415D1811E53FB9A0097AB72 /* SLQPreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D1801E53FB9A0097AB72 /* SLQPreViewController.m */; };
 		E415D1841E5402CC0097AB72 /* HtmlTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D1831E5402CC0097AB72 /* HtmlTool.m */; };
 		E415D1861E5458BD0097AB72 /* invoiceTable.html in Resources */ = {isa = PBXBuildFile; fileRef = E415D1851E5458BC0097AB72 /* invoiceTable.html */; };
-		E415D1891E545E290097AB72 /* PrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D1881E545E290097AB72 /* PrintViewController.m */; };
+		E415D1891E545E290097AB72 /* SLQPrintPageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D1881E545E290097AB72 /* SLQPrintPageRenderer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,13 +63,13 @@
 		E415D1791E53F83D0097AB72 /* invoice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = invoice.html; sourceTree = "<group>"; };
 		E415D17A1E53F83D0097AB72 /* last_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = last_item.html; sourceTree = "<group>"; };
 		E415D17B1E53F83D0097AB72 /* single_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = single_item.html; sourceTree = "<group>"; };
-		E415D17F1E53FB9A0097AB72 /* MMNormalQuestionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNormalQuestionController.h; sourceTree = "<group>"; };
-		E415D1801E53FB9A0097AB72 /* MMNormalQuestionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNormalQuestionController.m; sourceTree = "<group>"; };
+		E415D17F1E53FB9A0097AB72 /* SLQPreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLQPreViewController.h; sourceTree = "<group>"; };
+		E415D1801E53FB9A0097AB72 /* SLQPreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLQPreViewController.m; sourceTree = "<group>"; };
 		E415D1821E5402CC0097AB72 /* HtmlTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlTool.h; sourceTree = "<group>"; };
 		E415D1831E5402CC0097AB72 /* HtmlTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlTool.m; sourceTree = "<group>"; };
 		E415D1851E5458BC0097AB72 /* invoiceTable.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = invoiceTable.html; sourceTree = "<group>"; };
-		E415D1871E545E290097AB72 /* PrintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintViewController.h; sourceTree = "<group>"; };
-		E415D1881E545E290097AB72 /* PrintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintViewController.m; sourceTree = "<group>"; };
+		E415D1871E545E290097AB72 /* SLQPrintPageRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLQPrintPageRenderer.h; sourceTree = "<group>"; };
+		E415D1881E545E290097AB72 /* SLQPrintPageRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLQPrintPageRenderer.m; sourceTree = "<group>"; };
 		E46416131E569090003B7BC1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		E46416141E569090003B7BC1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,14 +123,14 @@
 		E415D1411E53F7FE0097AB72 /* HtmlDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E415D17F1E53FB9A0097AB72 /* MMNormalQuestionController.h */,
-				E415D1801E53FB9A0097AB72 /* MMNormalQuestionController.m */,
+				E415D17F1E53FB9A0097AB72 /* SLQPreViewController.h */,
+				E415D1801E53FB9A0097AB72 /* SLQPreViewController.m */,
 				E415D1451E53F7FE0097AB72 /* AppDelegate.h */,
 				E415D1461E53F7FE0097AB72 /* AppDelegate.m */,
 				E415D1481E53F7FE0097AB72 /* ViewController.h */,
 				E415D1491E53F7FE0097AB72 /* ViewController.m */,
-				E415D1871E545E290097AB72 /* PrintViewController.h */,
-				E415D1881E545E290097AB72 /* PrintViewController.m */,
+				E415D1871E545E290097AB72 /* SLQPrintPageRenderer.h */,
+				E415D1881E545E290097AB72 /* SLQPrintPageRenderer.m */,
 				E415D14B1E53F7FE0097AB72 /* Main.storyboard */,
 				E415D1511E53F7FE0097AB72 /* Assets.xcassets */,
 				E415D1531E53F7FE0097AB72 /* LaunchScreen.storyboard */,
@@ -321,9 +321,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E415D1841E5402CC0097AB72 /* HtmlTool.m in Sources */,
-				E415D1891E545E290097AB72 /* PrintViewController.m in Sources */,
+				E415D1891E545E290097AB72 /* SLQPrintPageRenderer.m in Sources */,
 				E415D14A1E53F7FE0097AB72 /* ViewController.m in Sources */,
-				E415D1811E53FB9A0097AB72 /* MMNormalQuestionController.m in Sources */,
+				E415D1811E53FB9A0097AB72 /* SLQPreViewController.m in Sources */,
 				E415D1471E53F7FE0097AB72 /* AppDelegate.m in Sources */,
 				E415D1441E53F7FE0097AB72 /* main.m in Sources */,
 				E415D1501E53F7FE0097AB72 /* HtmlDemo.xcdatamodeld in Sources */,

@@ -1,27 +1,28 @@
 //
-//  MMNormalQuestionController
+//  SLQPreViewController
 //  NanhaiPoliceM
 //
 //  Created by MrSong on 17/1/16.
-//  Copyright © 2017年 NanhaiPolice. All rights reserved.
-//  常见问题
+//  Copyright © 2017年 slq. All rights reserved.
+//  
 #pragma mark - 布局
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 #define NavigationBarHeight 64
-#import "MMNormalQuestionController.h"
-#import "PrintViewController.h"
+
+#import "SLQPreViewController.h"
+#import "SLQPrintPageRenderer.h"
 #import <MessageUI/MessageUI.h>
 #import <UIKit/UIPrinterPickerController.h>
 
-@interface MMNormalQuestionController ()<UIWebViewDelegate,MFMailComposeViewControllerDelegate>
+@interface SLQPreViewController ()<UIWebViewDelegate,MFMailComposeViewControllerDelegate>
 /**<#注释#>*/
 @property (nonatomic, strong) NSURLRequest *res;
 /**<#注释#>*/
 @property (nonatomic, strong) NSString *pdfFileName;
 @end
 
-@implementation MMNormalQuestionController
+@implementation SLQPreViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -78,23 +79,22 @@
     };
     
     
-    // Obtain a printInfo so that we can set our printing defaults.
+    // 设置打印机的一些默认信息
     UIPrintInfo *printInfo = [UIPrintInfo printInfo];
-    // This application produces General content that contains color.
+    // 输出类型
     printInfo.outputType = UIPrintInfoOutputGeneral;
-    // We'll use the URL as the job name.
-    printInfo.jobName = @"Demo";
-    // Set duplex so that it is available if the printer supports it. We are
-    // performing portrait printing so we want to duplex along the long edge.
+    // 打印队列名称
+    printInfo.jobName = @"HtmlDemo";
+    // 是否单双面打印
     printInfo.duplex = UIPrintInfoDuplexLongEdge;
-    // Use this printInfo for this print job.
+    // 设置默认打印信息
     controller.printInfo = printInfo;
     
-    // Be sure the page range controls are present for documents of > 1 page.
+    // 显示页码范围
     controller.showsPageRange = YES;
     
     // This code uses a custom UIPrintPageRenderer so that it can draw a header and footer.
-    PrintViewController *myRenderer = [[PrintViewController alloc] init];
+    SLQPrintPageRenderer *myRenderer = [[SLQPrintPageRenderer alloc] init];
     // The APLPrintPageRenderer class provides a jobtitle that it will label each page with.
 //    myRenderer.jobTitle = printInfo.jobName;
     // To draw the content of each page, a UIViewPrintFormatter is used.
@@ -117,7 +117,7 @@
 - (void)exportPDF {
     //UIPrintFormatter
     // UIPrintFormatter是打印格式的抽象基类。该类能够对打印内容进行布局，打印系统会自动将与打印格式绑定的内容打印出来。
-    PrintViewController *vc = [[PrintViewController alloc] init];
+    SLQPrintPageRenderer *vc = [[SLQPrintPageRenderer alloc] init];
     UIMarkupTextPrintFormatter *printFor = [[UIMarkupTextPrintFormatter alloc] initWithMarkupText:self.url];
 //    printFor.markupText = @"<html>\
 //    <body>\
@@ -135,7 +135,7 @@
     NSLog(@"文件路径：%@",pdfFilename);
 }
 
-- (NSData *)drawPDFUsingPrintPageRenderer:(PrintViewController *)pageRenter {
+- (NSData *)drawPDFUsingPrintPageRenderer:(SLQPrintPageRenderer *)pageRenter {
     NSDictionary *textAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:30] ,NSForegroundColorAttributeName:[UIColor blackColor],NSKernAttributeName:@10};
     NSMutableData *data = [[NSMutableData alloc] init];
 

@@ -11,7 +11,7 @@
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 #define NavigationBarHeight 64
 #import "ViewController.h"
-#import "MMNormalQuestionController.h"
+#import "SLQPreViewController.h"
 
 @interface ViewController ()
 
@@ -33,7 +33,7 @@
 - (void)createDoc {
     NSLog(@"生成文档");
     
-    MMNormalQuestionController *vc = [MMNormalQuestionController new];
+    SLQPreViewController *vc = [SLQPreViewController new];
     NSString *urlPath = [NSString stringWithContentsOfFile:[NSString stringWithFormat:@"%@/invoice.html",[NSBundle mainBundle].bundlePath] encoding:NSUTF8StringEncoding error:nil];
 //    urlPath = [NSString stringWithContentsOfFile:[NSString stringWithFormat:@"%@/invoiceTable.html",[NSBundle mainBundle].bundlePath] encoding:NSUTF8StringEncoding error:nil];
     vc.view.backgroundColor = [UIColor redColor];
