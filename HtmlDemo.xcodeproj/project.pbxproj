@@ -16,6 +16,13 @@
 		E415D1551E53F7FE0097AB72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E415D1531E53F7FE0097AB72 /* LaunchScreen.storyboard */; };
 		E415D1601E53F7FE0097AB72 /* HtmlDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D15F1E53F7FE0097AB72 /* HtmlDemoTests.m */; };
 		E415D16B1E53F7FE0097AB72 /* HtmlDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D16A1E53F7FE0097AB72 /* HtmlDemoUITests.m */; };
+		E415D17C1E53F83D0097AB72 /* invoice.html in Resources */ = {isa = PBXBuildFile; fileRef = E415D1791E53F83D0097AB72 /* invoice.html */; };
+		E415D17D1E53F83D0097AB72 /* last_item.html in Resources */ = {isa = PBXBuildFile; fileRef = E415D17A1E53F83D0097AB72 /* last_item.html */; };
+		E415D17E1E53F83D0097AB72 /* single_item.html in Resources */ = {isa = PBXBuildFile; fileRef = E415D17B1E53F83D0097AB72 /* single_item.html */; };
+		E415D1811E53FB9A0097AB72 /* MMNormalQuestionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D1801E53FB9A0097AB72 /* MMNormalQuestionController.m */; };
+		E415D1841E5402CC0097AB72 /* HtmlTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D1831E5402CC0097AB72 /* HtmlTool.m */; };
+		E415D1861E5458BD0097AB72 /* invoiceTable.html in Resources */ = {isa = PBXBuildFile; fileRef = E415D1851E5458BC0097AB72 /* invoiceTable.html */; };
+		E415D1891E545E290097AB72 /* PrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D1881E545E290097AB72 /* PrintViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,16 @@
 		E415D1661E53F7FE0097AB72 /* HtmlDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HtmlDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E415D16A1E53F7FE0097AB72 /* HtmlDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HtmlDemoUITests.m; sourceTree = "<group>"; };
 		E415D16C1E53F7FE0097AB72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E415D1791E53F83D0097AB72 /* invoice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = invoice.html; sourceTree = "<group>"; };
+		E415D17A1E53F83D0097AB72 /* last_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = last_item.html; sourceTree = "<group>"; };
+		E415D17B1E53F83D0097AB72 /* single_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = single_item.html; sourceTree = "<group>"; };
+		E415D17F1E53FB9A0097AB72 /* MMNormalQuestionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNormalQuestionController.h; sourceTree = "<group>"; };
+		E415D1801E53FB9A0097AB72 /* MMNormalQuestionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNormalQuestionController.m; sourceTree = "<group>"; };
+		E415D1821E5402CC0097AB72 /* HtmlTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlTool.h; sourceTree = "<group>"; };
+		E415D1831E5402CC0097AB72 /* HtmlTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlTool.m; sourceTree = "<group>"; };
+		E415D1851E5458BC0097AB72 /* invoiceTable.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = invoiceTable.html; sourceTree = "<group>"; };
+		E415D1871E545E290097AB72 /* PrintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintViewController.h; sourceTree = "<group>"; };
+		E415D1881E545E290097AB72 /* PrintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +100,7 @@
 		E415D1361E53F7FE0097AB72 = {
 			isa = PBXGroup;
 			children = (
+				E415D1781E53F83D0097AB72 /* HTML Templates */,
 				E415D1411E53F7FE0097AB72 /* HtmlDemo */,
 				E415D15E1E53F7FE0097AB72 /* HtmlDemoTests */,
 				E415D1691E53F7FE0097AB72 /* HtmlDemoUITests */,
@@ -103,16 +121,22 @@
 		E415D1411E53F7FE0097AB72 /* HtmlDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E415D17F1E53FB9A0097AB72 /* MMNormalQuestionController.h */,
+				E415D1801E53FB9A0097AB72 /* MMNormalQuestionController.m */,
 				E415D1451E53F7FE0097AB72 /* AppDelegate.h */,
 				E415D1461E53F7FE0097AB72 /* AppDelegate.m */,
 				E415D1481E53F7FE0097AB72 /* ViewController.h */,
 				E415D1491E53F7FE0097AB72 /* ViewController.m */,
+				E415D1871E545E290097AB72 /* PrintViewController.h */,
+				E415D1881E545E290097AB72 /* PrintViewController.m */,
 				E415D14B1E53F7FE0097AB72 /* Main.storyboard */,
 				E415D1511E53F7FE0097AB72 /* Assets.xcassets */,
 				E415D1531E53F7FE0097AB72 /* LaunchScreen.storyboard */,
 				E415D1561E53F7FE0097AB72 /* Info.plist */,
 				E415D14E1E53F7FE0097AB72 /* HtmlDemo.xcdatamodeld */,
 				E415D1421E53F7FE0097AB72 /* Supporting Files */,
+				E415D1821E5402CC0097AB72 /* HtmlTool.h */,
+				E415D1831E5402CC0097AB72 /* HtmlTool.m */,
 			);
 			path = HtmlDemo;
 			sourceTree = "<group>";
@@ -141,6 +165,17 @@
 				E415D16C1E53F7FE0097AB72 /* Info.plist */,
 			);
 			path = HtmlDemoUITests;
+			sourceTree = "<group>";
+		};
+		E415D1781E53F83D0097AB72 /* HTML Templates */ = {
+			isa = PBXGroup;
+			children = (
+				E415D1851E5458BC0097AB72 /* invoiceTable.html */,
+				E415D1791E53F83D0097AB72 /* invoice.html */,
+				E415D17A1E53F83D0097AB72 /* last_item.html */,
+				E415D17B1E53F83D0097AB72 /* single_item.html */,
+			);
+			path = "HTML Templates";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,9 +287,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E415D17C1E53F83D0097AB72 /* invoice.html in Resources */,
+				E415D17D1E53F83D0097AB72 /* last_item.html in Resources */,
 				E415D1551E53F7FE0097AB72 /* LaunchScreen.storyboard in Resources */,
 				E415D1521E53F7FE0097AB72 /* Assets.xcassets in Resources */,
 				E415D14D1E53F7FE0097AB72 /* Main.storyboard in Resources */,
+				E415D17E1E53F83D0097AB72 /* single_item.html in Resources */,
+				E415D1861E5458BD0097AB72 /* invoiceTable.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +318,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E415D1841E5402CC0097AB72 /* HtmlTool.m in Sources */,
+				E415D1891E545E290097AB72 /* PrintViewController.m in Sources */,
 				E415D14A1E53F7FE0097AB72 /* ViewController.m in Sources */,
+				E415D1811E53FB9A0097AB72 /* MMNormalQuestionController.m in Sources */,
 				E415D1471E53F7FE0097AB72 /* AppDelegate.m in Sources */,
 				E415D1441E53F7FE0097AB72 /* main.m in Sources */,
 				E415D1501E53F7FE0097AB72 /* HtmlDemo.xcdatamodeld in Sources */,
@@ -377,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -418,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -431,6 +473,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L76K5AFQYD;
 				INFOPLIST_FILE = HtmlDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.songliquan.github.HtmlDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,6 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L76K5AFQYD;
 				INFOPLIST_FILE = HtmlDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.songliquan.github.HtmlDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,6 +562,7 @@
 				E415D1711E53F7FE0097AB72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E415D1721E53F7FE0097AB72 /* Build configuration list for PBXNativeTarget "HtmlDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +571,7 @@
 				E415D1741E53F7FE0097AB72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E415D1751E53F7FE0097AB72 /* Build configuration list for PBXNativeTarget "HtmlDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +580,7 @@
 				E415D1771E53F7FE0097AB72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
