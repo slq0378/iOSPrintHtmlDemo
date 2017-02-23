@@ -23,6 +23,8 @@
 		E415D1841E5402CC0097AB72 /* HtmlTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D1831E5402CC0097AB72 /* HtmlTool.m */; };
 		E415D1861E5458BD0097AB72 /* invoiceTable.html in Resources */ = {isa = PBXBuildFile; fileRef = E415D1851E5458BC0097AB72 /* invoiceTable.html */; };
 		E415D1891E545E290097AB72 /* SLQPrintPageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E415D1881E545E290097AB72 /* SLQPrintPageRenderer.m */; };
+		E420C0841E5BCF43004A95B0 /* ask_note.html in Resources */ = {isa = PBXBuildFile; fileRef = E420C0831E5BCF43004A95B0 /* ask_note.html */; };
+		E420C0861E5BD053004A95B0 /* ask_note.js in Resources */ = {isa = PBXBuildFile; fileRef = E420C0851E5BD053004A95B0 /* ask_note.js */; };
 		E46428601E56E927003B7BC1 /* SLQPDFPreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E464285F1E56E927003B7BC1 /* SLQPDFPreViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		E415D1851E5458BC0097AB72 /* invoiceTable.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = invoiceTable.html; sourceTree = "<group>"; };
 		E415D1871E545E290097AB72 /* SLQPrintPageRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLQPrintPageRenderer.h; sourceTree = "<group>"; };
 		E415D1881E545E290097AB72 /* SLQPrintPageRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLQPrintPageRenderer.m; sourceTree = "<group>"; };
+		E420C0831E5BCF43004A95B0 /* ask_note.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ask_note.html; sourceTree = "<group>"; };
+		E420C0851E5BD053004A95B0 /* ask_note.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ask_note.js; sourceTree = "<group>"; };
 		E46416131E569090003B7BC1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		E46416141E569090003B7BC1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		E464285E1E56E927003B7BC1 /* SLQPDFPreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLQPDFPreViewController.h; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 		E415D1781E53F83D0097AB72 /* HTML Templates */ = {
 			isa = PBXGroup;
 			children = (
+				E420C0831E5BCF43004A95B0 /* ask_note.html */,
+				E420C0851E5BD053004A95B0 /* ask_note.js */,
 				E415D1851E5458BC0097AB72 /* invoiceTable.html */,
 				E415D1791E53F83D0097AB72 /* invoice.html */,
 				E415D17A1E53F83D0097AB72 /* last_item.html */,
@@ -296,8 +302,10 @@
 			files = (
 				E415D17C1E53F83D0097AB72 /* invoice.html in Resources */,
 				E415D17D1E53F83D0097AB72 /* last_item.html in Resources */,
+				E420C0861E5BD053004A95B0 /* ask_note.js in Resources */,
 				E415D1551E53F7FE0097AB72 /* LaunchScreen.storyboard in Resources */,
 				E415D1521E53F7FE0097AB72 /* Assets.xcassets in Resources */,
+				E420C0841E5BCF43004A95B0 /* ask_note.html in Resources */,
 				E415D14D1E53F7FE0097AB72 /* Main.storyboard in Resources */,
 				E415D17E1E53F83D0097AB72 /* single_item.html in Resources */,
 				E415D1861E5458BD0097AB72 /* invoiceTable.html in Resources */,

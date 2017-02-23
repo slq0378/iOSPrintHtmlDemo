@@ -98,9 +98,23 @@
 
 - (void)selectEmailAction:(UIBarButtonItem *)btnItem {
     NSLog(@"Email");
-    [self exportHtml];
-    [self displayComposerSheet];
+//    [self exportHtml];
+//    [self displayComposerSheet];
     
+    
+    NSString *js = [NSString stringWithFormat:@"document.getElementById(\"spyMan\").innerHTML=\"解决安静\";\
+                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
+                    document.getElementById(\"spyUnit\").innerHTML=\"海岛大亨打电话的好的好的好的好的好的好的话的很多静\";\
+                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
+                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
+                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
+                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
+                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
+                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
+                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
+                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
+                    document.getElementById(\"askMan\").innerHTML=\"解决静\";"];
+    [self.webView stringByEvaluatingJavaScriptFromString:js];
 }
 
 - (void)exportHtml {
@@ -115,6 +129,9 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
 //    [SVProgressHUD dismiss];
 //    [SVProgressHUD showSuccessWithStatus:@"加载成功"];
+    
+    NSString *js = @"alert('hello world');";
+    [webView stringByEvaluatingJavaScriptFromString:js];
 }
 // 请求错误时调用这个方法
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
@@ -124,6 +141,11 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
     return YES;
+}
+
+
+- (void)setData {
+    
 }
 
 

@@ -34,7 +34,7 @@
     NSLog(@"生成文档");
     
     SLQPreViewController *vc = [SLQPreViewController new];
-    NSString *urlPath = [NSString stringWithContentsOfFile:[NSString stringWithFormat:@"%@/invoice.html",[NSBundle mainBundle].bundlePath] encoding:NSUTF8StringEncoding error:nil];
+    NSString *urlPath = [NSString stringWithContentsOfFile:[NSString stringWithFormat:@"%@/ask_note.html",[NSBundle mainBundle].bundlePath] encoding:NSUTF8StringEncoding error:nil];
 //    urlPath = [NSString stringWithContentsOfFile:[NSString stringWithFormat:@"%@/invoiceTable.html",[NSBundle mainBundle].bundlePath] encoding:NSUTF8StringEncoding error:nil];
     vc.view.backgroundColor = [UIColor redColor];
     // 处理URL
@@ -51,6 +51,7 @@
     return str;
 }
 - (NSString *)mergeString:(NSString *)sourceStr baseStr:(NSString *)baseStr {
+    return sourceStr;
     NSString *str = [NSString stringWithFormat:@"%@%@",baseStr,sourceStr];
 //    NSString *line = @"____________________________________________________________";// 60个_刚好一行,每个7.0宽度
     CGSize size = [str sizeWithFont:[UIFont systemFontOfSize:16]];
