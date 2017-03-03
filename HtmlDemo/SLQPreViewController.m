@@ -15,6 +15,7 @@
 #import <MessageUI/MessageUI.h>
 #import <UIKit/UIPrinterPickerController.h>
 
+
 @interface SLQPreViewController ()<UIWebViewDelegate,MFMailComposeViewControllerDelegate>
 /**<#注释#>*/
 @property (nonatomic, strong) NSURLRequest *res;
@@ -28,6 +29,7 @@
     [super viewDidLoad];
 //
     self.title = @"预览";
+    // A4 595 841
     UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - 0)];
     [self.view addSubview:web];
     _webView = web;
@@ -101,20 +103,70 @@
 //    [self exportHtml];
 //    [self displayComposerSheet];
     
+    NSString *allDataStr = @"记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对";
+    // A4 width 595
+    // 实际字符串宽度 595-40=555
+//    NSString *addJS = @"<table cellpadding=\"0\" cellspacing=\"0\" class=\"note-edit-table\">\
+//    <tbody><tr style=\"height:40px;\">\
+//    <td style=\"\"><div class=\"note-edit-content\"><font id=\"addrDetail\">记得将基督教的基督教点击对记得将的基督教点击对</font>&nbsp;</div></td>\
+//    </tr>\
+//    <tr style=\"height:40px;\">\
+//    <td style=\"\"><div class=\"note-edit-content\"><font id=\"addrDetail\">记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对记得将基督教的基督教点击对记得将的基督教点击对</font>&nbsp;</div></td>\
+//    </tr>\
+//    </tbody>\
+//    </table>\";";
+    NSString *addJS = @"<table cellpadding=\"0\" cellspacing=\"0\" class=\"note-edit-table\">\
+    <tbody><tr style=\"height:40px;\">\
+    <td style=\"width:100px;\"><div class=\"note-edit-tips\">户籍所在地</div></td>\
+    <td style=\"\"><div class=\"note-edit-content\"><font id=\"homePlacr\"></font>&nbsp;</div></td>\
+    </tr>\
+    </tbody></table>";
     
-    NSString *js = [NSString stringWithFormat:@"document.getElementById(\"spyMan\").innerHTML=\"解决安静\";\
-                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
-                    document.getElementById(\"spyUnit\").innerHTML=\"海岛大亨打电话的好的好的好的好的好的好的话的很多静\";\
-                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
-                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
-                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
-                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
-                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
-                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
-                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
-                    document.getElementById(\"askMan\").innerHTML=\"解决静\";\
-                    document.getElementById(\"askMan\").innerHTML=\"解决静\";"];
+    
+    NSString *js = [NSString stringWithFormat:@"document.getElementById(\"startTimeYear\").innerHTML=\"2017\";\
+                    document.getElementById(\"startTimeMonth\").innerHTML=\"5\";\
+                    document.getElementById(\"startTimeDay\").innerHTML=\"6\";\
+                    document.getElementById(\"startTimeHour\").innerHTML=\"5\";\
+                    document.getElementById(\"startTimeMinute\").innerHTML=\"34\";\
+                    document.getElementById(\"endTimeYear\").innerHTML=\"2017\";\
+                    document.getElementById(\"endTimeMonth\").innerHTML=\"6\";\
+                    document.getElementById(\"endTimeDay\").innerHTML=\"4\";\
+                    document.getElementById(\"endTimeHour\").innerHTML=\"3\";\
+                    document.getElementById(\"endTimeMinute\").innerHTML=\"4\";\
+                    document.getElementById(\"askAddr\").innerHTML=\"广东省佛山市翠亨区\";\
+                    document.getElementById(\"spyMan\").innerHTML=\"张三上\";\
+                    document.getElementById(\"askMan\").innerHTML=\"赖柳\";\
+                    document.getElementById(\"askAddr\").innerHTML=\"广东省佛山市翠亨区\";\
+                    document.getElementById(\"spyUnit\").innerHTML=\"广东省佛山市南海区\";\
+                    document.getElementById(\"createMan\").innerHTML=\"王章\";\
+                    document.getElementById(\"createUnit\").innerHTML=\"广东省广州市\";\
+                    document.getElementById(\"askedName\").innerHTML=\"小汪\";\
+                    document.getElementById(\"askedSex\").innerHTML=\"男\";\
+                    document.getElementById(\"askedAge\").innerHTML=\"34\";\
+                    document.getElementById(\"askedBirthDate\").innerHTML=\"17890922\";\
+                    document.getElementById(\"askedManId\").innerHTML=\"身份证 43839391919393948949\";\
+                    document.getElementById(\"askedDeputy\").innerHTML=\"□是■否\";\
+                    document.getElementById(\"addrDetail\").innerHTML=\"广东省佛山市翠亨区\";\
+                    document.getElementById(\"contact\").innerHTML=\"1829292929299\";\
+                    document.getElementById(\"homePlacr\").innerHTML=\"广东省佛山市\";\
+                    document.getElementById(\"ZDTAStartMonth\").innerHTML=\"5\";\
+                    document.getElementById(\"ZDTAStartDay\").innerHTML=\"3\";\
+                    document.getElementById(\"ZDTAStartHour\").innerHTML=\"12\";\
+                    document.getElementById(\"ZDTAStartMinute\").innerHTML=\"44\";\
+                    document.getElementById(\"ZDTAEndMonth\").innerHTML=\"6\";\
+                    document.getElementById(\"ZDTAEndDay\").innerHTML=\"7\";\
+                    document.getElementById(\"ZDTAEndHour\").innerHTML=\"7\";\
+                    document.getElementById(\"ZDTAEndMinute\").innerHTML=\"7\";\
+                    document.getElementById(\"ZDTASign\").innerHTML=\"嫌疑犯\";\
+                    "];
     [self.webView stringByEvaluatingJavaScriptFromString:js];
+
+    
+
+    NSString *js2 = [NSString stringWithFormat:@"document.getElementById(\"noteContent\").innerHTML+=\"%@\"",addJS];
+    [self.webView stringByEvaluatingJavaScriptFromString:js2];
+//    [self.webView stringByEvaluatingJavaScriptFromString:@"document.getElementById(\"ZDTASign\").innerHTML=\"Hello World\";"];
+
 }
 
 - (void)exportHtml {
@@ -130,8 +182,8 @@
 //    [SVProgressHUD dismiss];
 //    [SVProgressHUD showSuccessWithStatus:@"加载成功"];
     
-    NSString *js = @"alert('hello world');";
-    [webView stringByEvaluatingJavaScriptFromString:js];
+//    NSString *js = @"alert('hello world');";
+//    [webView stringByEvaluatingJavaScriptFromString:js];
 }
 // 请求错误时调用这个方法
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {

@@ -7,7 +7,7 @@
 //  预览
 
 #import <UIKit/UIKit.h>
-
+#import <JavaScriptCore/JavaScriptCore.h>
 @interface SLQPreViewController :UIViewController
 /**UIWebView*/
 @property (nonatomic, strong) UIWebView *webView;

@@ -68,6 +68,7 @@
             sourceStr = [sourceStr stringByAppendingString:[self getStrWithCount:width/7.0]];
         }
     }
+    //记得将基督教的基督教点击对记得将的基督教点击记得将基督教的对的的的的的
     NSLog(@"拼接后：%f",[[NSString stringWithFormat:@"%@%@",baseStr,sourceStr] sizeWithFont:[UIFont systemFontOfSize:16]].width);
     return sourceStr;
 }

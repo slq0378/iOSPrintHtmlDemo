@@ -1,187 +1,299 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>询问笔录</title>
-    <style type="text/css">
-        .note-times{
-            float:right;
-            font:bold;
-        }
-        .note-title{
-            text-align:center;
-            font-weight:bolder;
-            font:30px '黑体';
-            margin-bottom:40px;
-        }
-        .note-time{
-            border-bottom:1px solid black;
-            width:100%;
-            font:bold 18px '楷体_GB2312';
-        }
-        .note-edit-table{
-            margin:0px;
-            padding:0px;
-            font:20px '宋体';
-            text-align:left;
-            width:100%;
-        }
-        .note-edit-tips{
-            text-decoration:none;
-            width:100%;
-        }
-        .note-edit-content{
-            border-bottom:1px solid black;
-            width:100%;
-            font:bold 18px '楷体_GB2312';
-        }
-    </style>
-    <!--<link rel="stylesheet" type="text/css" href="ask_note.css" media="screen" />-->
-    <script type="text/javascript" src="ask_note.js"></script>
-</head>
-<body onload="setData()">
-<div id="content30389" class="printArea">
-    <div>
-        <div style="width:100%; height:100%;line-height:2.0em;">
-            <div class="note-times">第<u>&nbsp;&nbsp;&nbsp;&nbsp;<font id="times"></font>&nbsp;&nbsp;&nbsp;&nbsp;</u>次</div>
-            <div style="clear:both;"></div>
-            <div class="note-title"><strong>询问笔录</strong></div>
-
-            <div id="noteContent" style="font:20px '宋体'; line-height:1.8em;">
-                <table cellpadding="0" cellspacing="0" style="margin:0px; padding:0px; font:20px '宋体';text-align:center;width:100%;">
-                    <tbody><tr valign="middle" style="height:40px;">
-                        <td style="width:40px;">时间</td>
-                        <td style="width:45px;"><div class="note-time" id="startTimeYear">&nbsp;</div></td>
-                        <td style="width:25px;">年</td>
-                        <td style="width:25px;"><div class="note-time" id="startTimeMonth">&nbsp;</div></td>
-                        <td style="width:25px;">月</td>
-                        <td style="width:25px;"><div class="note-time" id="startTimeDay">&nbsp;</div></td>
-                        <td style="width:25px;">日</td>
-                        <td style="width:25px;"><div class="note-time" id="startTimeHour">&nbsp;</div></td>
-                        <td style="width:25px;">时</td>
-                        <td style="width:25px;"><div class="note-time" id="startTimeMinute">&nbsp;</div></td>
-                        <td style="width:25px;">分</td>
-                        <td>至</td>
-                        <td style="width:45px;"><div class="note-time" id="endTimeYear">&nbsp;</div></td>
-                        <td style="width:25px;">年</td>
-                        <td style="width:25px;"><div class="note-time" id="endTimeMonth">&nbsp;</div></td>
-                        <td style="width:25px;">月</td>
-                        <td style="width:25px;"><div class="note-time" id="endTimeDay">&nbsp;</div></td>
-                        <td style="width:25px;">日</td>
-                        <td style="width:25px;"><div class="note-time" id="endTimeHour">&nbsp;</div></td>
-                        <td style="width:25px;">时</td>
-                        <td style="width:25px;"><div class="note-time" id="endTimeMinute">&nbsp;</div></td>
-                        <td style="width:25px;">分</td>
-                    </tr>
-                    </tbody></table>
-                <table cellpadding="0" cellspacing="0" class="note-edit-table">
-                    <tbody><tr style="height:40px;">
-                        <td style="width:40px;"><div class="note-edit-tips">地点</div></td>
-                        <td style=""><div class="note-edit-content"><font id="askAddr"></font>&nbsp;</div></td>
-                    </tr>
-                    </tbody></table>
-                <table cellpadding="0" cellspacing="0" class="note-edit-table">
-                    <tbody><tr style="height:40px;">
-                        <td style="width:60px;"><div class="note-edit-tips">询问人</div></td>
-                        <td style="width:70px;"><div class="note-edit-content"><font id="spyMan"></font>&nbsp;</div></td>
-                        <td style="width:5px;"><div style="font:bold 15px '楷体_GB2312';width:100%;">、</div></td>
-                        <td style="width:70px;"><div class="note-edit-content"><font id="askMan"></font>&nbsp;</div></td>
-                        <td style="width:80px;"><div class="note-edit-tips">工作单位</div></td>
-                        <td style=""><div class="note-edit-content"><font id="spyUnit"></font>&nbsp;</div></td>
-                    </tr>
-                    </tbody></table>
-                <table cellpadding="0" cellspacing="0" class="note-edit-table">
-                    <tbody><tr style="height:40px;">
-                        <td style="width:60px;"><div class="note-edit-tips">记录人</div></td>
-                        <td style="width:150px;"><div class="note-edit-content"><font id="createMan"></font>&nbsp;</div></td>
-                        <td style="width:80px;"><div class="note-edit-tips">工作单位</div></td>
-                        <td style=""><div class="note-edit-content"><font id="createUnit"></font>&nbsp;</div></td>
-                    </tr>
-                    </tbody></table>
-                <table cellpadding="0" cellspacing="0" class="note-edit-table">
-                    <tbody><tr style="height:40px;">
-                        <td style="width:80px;"><div class="note-edit-tips">被询问人</div></td>
-                        <td style="width:110px; text-align:center;"><div class="note-edit-content"><font id="askedName"></font>&nbsp;</div></td>
-                        <td style="width:40px;"><div class="note-edit-tips">性别</div></td>
-                        <td style="width:30px; text-align:center;"><div class="note-edit-content" id="askedSex">&nbsp;</div></td>
-                        <td style="width:40px;"><div class="note-edit-tips">年龄</div></td>
-                        <td style="width:40px; text-align:center;"><div class="note-edit-content" id="askedAge">&nbsp;</div></td>
-                        <td style="width:80px;"><div class="note-edit-tips">出生日期</div></td>
-                        <td style="text-align:center;"><div class="note-edit-content"><font id="askedBirthDate"></font>&nbsp;</div></td>
-                    </tr>
-                    </tbody></table>
-                <table cellpadding="0" cellspacing="0" class="note-edit-table">
-                    <tbody><tr style="height:40px;">
-                        <td style="width:180px;"><div class="note-edit-tips">身份证件种类及号码</div></td>
-                        <td style=""><div class="note-edit-content"><font id="askedManId"></font>&nbsp;</div></td>
-                        <td style="width:100px;"><div class="note-edit-tips"><font id="askedDeputy">□是■否</font>&nbsp;</div></td>
-                        <td style="width:80px;"><div class="note-edit-tips">人大代表</div></td>
-                    </tr>
-                    </tbody></table>
-                <table cellpadding="0" cellspacing="0" class="note-edit-table">
-                    <tbody><tr style="height:40px;">
-                        <td style="width:60px;"><div class="note-edit-tips">现住址</div></td>
-                        <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
-                    </tr>
-                    </tbody></table>
-                <table cellpadding="0" cellspacing="0" class="note-edit-table">
-                    <tbody><tr style="height:40px;">
-                        <td style="width:80px;"><div class="note-edit-tips">联系方式</div></td>
-                        <td style=""><div class="note-edit-content"><font id="contact"></font>&nbsp;</div></td>
-                    </tr>
-                    </tbody></table>
-                <table cellpadding="0" cellspacing="0" class="note-edit-table">
-                    <tbody><tr style="height:40px;">
-                        <td style="width:100px;"><div class="note-edit-tips">户籍所在地</div></td>
-                        <td style=""><div class="note-edit-content"><font id="homePlacr"></font>&nbsp;</div></td>
-                    </tr>
-                    </tbody></table>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>询问笔录</title>
+            <style type="text/css">
+                .note-times{
+                    float:right;
+                    font:bold;
+                }
+            .note-title{
+                text-align:center;
+                font-weight:bolder;
+                font:30px '黑体';
+                margin-bottom:40px;
+            }
+            .note-time{
+                border-bottom:1px solid black;
+                width:100%;
+                font:bold 18px '楷体_GB2312';
+            }
+            .note-edit-table{
+                margin:0px;
+                padding:0px;
+                font:20px '宋体';
+                text-align:left;
+                width:100%;
+            }
+            .note-edit-tips{
+                text-decoration:none;
+                width:100%;
+            }
+            .note-edit-content{
+                border-bottom:1px solid black;
+                width:100%;
+                font:bold 18px '楷体_GB2312';
+            }
+            </style>
+            <!--<link rel="stylesheet" type="text/css" href="ask_note.css" media="screen" />-->
+            <script>
                 
                 
-<!--                <table cellpadding="0" cellspacing="0" class="note-edit-table">-->
-<!--                    <tbody><tr style="height:40px;">-->
-<!--                        <td style="width:100px;">                <div class="note-edit-tips">（口头传唤/被扭送/自动投案的被询问人<font-->
-<!--                            class="note-edit-content" id="askedArriveMonth">&nbsp;&nbsp;&nbsp;&nbsp;</font>月<font-->
-<!--                                class="note-edit-content" id="askedArriveDay">&nbsp;&nbsp;&nbsp;&nbsp;</font>日<font-->
-<!--                                    class="note-edit-content" id="askedArriveHour">&nbsp;&nbsp;&nbsp;&nbsp;</font>时<font-->
-<!--                                        class="note-edit-content" id="askedArriveMinute">&nbsp;&nbsp;&nbsp;&nbsp;</font>分到达，<font-->
-<!--                                            class="note-edit-content" id="askedLeaveMonth">&nbsp;&nbsp;&nbsp;&nbsp;</font>月<font-->
-<!--                                                class="note-edit-content" id="askedLeaveDay">&nbsp;&nbsp;&nbsp;&nbsp;</font>日<font-->
-<!--                                                    class="note-edit-content" id="askedLeaveHour">&nbsp;&nbsp;&nbsp;&nbsp;</font>时<font-->
-<!--                                                        class="note-edit-content" id="askedLeaveMinute">&nbsp;&nbsp;&nbsp;&nbsp;</font>分离开，本人签名确认：___________）</div></td>-->
-<!--                    </tr>-->
-<!--                    </tbody></table>-->
-
-<!--                <div class="note-edit-tips">（口头传唤/被扭送/自动投案的被询问人<font-->
-<!--                        class="note-edit-content" id="askedArriveMonth">&nbsp;&nbsp;&nbsp;&nbsp;</font>月<font-->
-<!--                        class="note-edit-content" id="askedArriveDay">&nbsp;&nbsp;&nbsp;&nbsp;</font>日<font-->
-<!--                        class="note-edit-content" id="askedArriveHour">&nbsp;&nbsp;&nbsp;&nbsp;</font>时<font-->
-<!--                        class="note-edit-content" id="askedArriveMinute">&nbsp;&nbsp;&nbsp;&nbsp;</font>分到达，<font-->
-<!--                        class="note-edit-content" id="askedLeaveMonth">&nbsp;&nbsp;&nbsp;&nbsp;</font>月<font-->
-<!--                        class="note-edit-content" id="askedLeaveDay">&nbsp;&nbsp;&nbsp;&nbsp;</font>日<font-->
-<!--                        class="note-edit-content" id="askedLeaveHour">&nbsp;&nbsp;&nbsp;&nbsp;</font>时<font-->
-<!--                        class="note-edit-content" id="askedLeaveMinute">&nbsp;&nbsp;&nbsp;&nbsp;</font>分离开，本人签名确认：___________）</div>-->
-                <div class="note-edit-table" >
-                    (口头传唤/被扭送/自动投案的被询问人/询问人于
-                    <u>#ZDTAStartMonth#</u> 月
-                    <u>#ZDTAStartDay#</u> 日
-                    <u>#ZDTAStartHour#</u> 时
-                    <u>#ZDTAStartMinute#</u> 分到达，
-                    <u>#ZDTAEndMonth#</u> 月
-                    <u>#ZDTAEndDay#</u> 日
-                    <u>#ZDTAEndHour#</u> 时
-                    <u>#ZDTAEndMinute#</u> 分离开，本人签名确认：
-                    <u>#ZDTASign#</u>)
+                
+                function setData()
+                {
+                    console.log('hahhaha');
+                    addLine(3);
+                    ////    var note = eval('(' + JavaScriptInterface.noteInfoData() + ')');
+                    ////    var note = '{"endTimeDay":"jack"}';
+                    ////    var obj = JSON.parse(note);
+                    //    var note = JSON.parse(JavaScriptInterface.noteInfoData());
+                    //
+                    ////    times.innerHTML = note.times;
+                    //
+                    //    startTimeYear.innerHTML = note.startTimeYear;
+                    //    startTimeMonth.innerHTML = note.startTimeMonth;
+                    //    startTimeDay.innerHTML = note.startTimeDay;
+                    //    startTimeHour.innerHTML = note.startTimeHour;
+                    //    startTimeMinute.innerHTML = note.startTimeMinute;
+                    //
+                    //    endTimeYear.innerHTML = note.endTimeYear;
+                    //    endTimeMonth.innerHTML = note.endTimeMonth;
+                    //    endTimeDay.innerHTML = note.endTimeDay;
+                    //    endTimeHour.innerHTML = note.endTimeHour;
+                    //    endTimeMinute.innerHTML = note.endTimeMinute;
+                }
+            function addLine(pageCount) {
+                var line = "<table cellpadding=\"0\" cellspacing=\"0\" class=\"note-edit-table\"><tbody>" +
+                "<tr style=\"height:40px;\"><td style=\"\"><div class=\"note-edit-content\">&nbsp;" +
+                "</div></td></tr></tbody></table>";
+                var htmlCode = "";
+                for (var i = 0; i < pageCount; i++) {
+                    htmlCode +=line;
+                }
+                document.getElementById("noteContent").innerHTML += htmlCode
+            }
+            </script>
+    </head>
+    <body onload="setData()">
+        <div id="content30389" class="printArea">
+            <div>
+                <div style="width:100%; height:100%;line-height:2.0em;">
+                    <div class="note-times">第<u>&nbsp;&nbsp;&nbsp;&nbsp;<font id="times"></font>&nbsp;&nbsp;&nbsp;&nbsp;</u>次</div>
+                    <div style="clear:both;"></div>
+                    <div class="note-title"><strong>询问笔录</strong></div>
+                    
+                    <div id="noteContent" style="font:20px '宋体'; line-height:1.8em;">
+                        <table cellpadding="0" cellspacing="0" style="margin:0px; padding:0px; font:20px '宋体';text-align:center;width:100%;">
+                            <tbody><tr valign="middle" style="height:40px;">
+                                <td style="width:40px;">时间</td>
+                                <td style="width:45px;"><div class="note-time" id="startTimeYear">&nbsp;</div></td>
+                                <td style="width:25px;">年</td>
+                                <td style="width:25px;"><div class="note-time" id="startTimeMonth">&nbsp;</div></td>
+                                <td style="width:25px;">月</td>
+                                <td style="width:25px;"><div class="note-time" id="startTimeDay">&nbsp;</div></td>
+                                <td style="width:25px;">日</td>
+                                <td style="width:25px;"><div class="note-time" id="startTimeHour">&nbsp;</div></td>
+                                <td style="width:25px;">时</td>
+                                <td style="width:25px;"><div class="note-time" id="startTimeMinute">&nbsp;</div></td>
+                                <td style="width:25px;">分</td>
+                                <td>至</td>
+                                <td style="width:45px;"><div class="note-time" id="endTimeYear">&nbsp;</div></td>
+                                <td style="width:25px;">年</td>
+                                <td style="width:25px;"><div class="note-time" id="endTimeMonth">&nbsp;</div></td>
+                                <td style="width:25px;">月</td>
+                                <td style="width:25px;"><div class="note-time" id="endTimeDay">&nbsp;</div></td>
+                                <td style="width:25px;">日</td>
+                                <td style="width:25px;"><div class="note-time" id="endTimeHour">&nbsp;</div></td>
+                                <td style="width:25px;">时</td>
+                                <td style="width:25px;"><div class="note-time" id="endTimeMinute">&nbsp;</div></td>
+                                <td style="width:25px;">分</td>
+                            </tr>
+                            </tbody></table>
+                        <table cellpadding="0" cellspacing="0" class="note-edit-table">
+                            <tbody><tr style="height:40px;">
+                                <td style="width:40px;"><div class="note-edit-tips">地点</div></td>
+                                <td style=""><div class="note-edit-content"><font id="askAddr"></font>&nbsp;</div></td>
+                            </tr>
+                            </tbody></table>
+                        <table cellpadding="0" cellspacing="0" class="note-edit-table">
+                            <tbody><tr style="height:40px;">
+                                <td style="width:60px;"><div class="note-edit-tips">询问人</div></td>
+                                <td style="width:70px;"><div class="note-edit-content"><font id="spyMan"></font>&nbsp;</div></td>
+                                <td style="width:5px;"><div style="font:bold 15px '楷体_GB2312';width:100%;">、</div></td>
+                                <td style="width:70px;"><div class="note-edit-content"><font id="askMan"></font>&nbsp;</div></td>
+                                <td style="width:80px;"><div class="note-edit-tips">工作单位</div></td>
+                                <td style=""><div class="note-edit-content"><font id="spyUnit"></font>&nbsp;</div></td>
+                            </tr>
+                            </tbody></table>
+                        <table cellpadding="0" cellspacing="0" class="note-edit-table">
+                            <tbody><tr style="height:40px;">
+                                <td style="width:60px;"><div class="note-edit-tips">记录人</div></td>
+                                <td style="width:150px;"><div class="note-edit-content"><font id="createMan"></font>&nbsp;</div></td>
+                                <td style="width:80px;"><div class="note-edit-tips">工作单位</div></td>
+                                <td style=""><div class="note-edit-content"><font id="createUnit"></font>&nbsp;</div></td>
+                            </tr>
+                            </tbody></table>
+                        <table cellpadding="0" cellspacing="0" class="note-edit-table">
+                            <tbody><tr style="height:40px;">
+                                <td style="width:80px;"><div class="note-edit-tips">被询问人</div></td>
+                                <td style="width:110px; text-align:center;"><div class="note-edit-content"><font id="askedName"></font>&nbsp;</div></td>
+                                <td style="width:40px;"><div class="note-edit-tips">性别</div></td>
+                                <td style="width:30px; text-align:center;"><div class="note-edit-content" id="askedSex">&nbsp;</div></td>
+                                <td style="width:40px;"><div class="note-edit-tips">年龄</div></td>
+                                <td style="width:40px; text-align:center;"><div class="note-edit-content" id="askedAge">&nbsp;</div></td>
+                                <td style="width:80px;"><div class="note-edit-tips">出生日期</div></td>
+                                <td style="text-align:center;"><div class="note-edit-content"><font id="askedBirthDate"></font>&nbsp;</div></td>
+                            </tr>
+                            </tbody></table>
+                        <table cellpadding="0" cellspacing="0" class="note-edit-table">
+                            <tbody><tr style="height:40px;">
+                                <td style="width:180px;"><div class="note-edit-tips">身份证件种类及号码</div></td>
+                                <td style=""><div class="note-edit-content"><font id="askedManId"></font>&nbsp;</div></td>
+                                <td style="width:100px;"><div class="note-edit-tips"><font id="askedDeputy">□是■否</font>&nbsp;</div></td>
+                                <td style="width:80px;"><div class="note-edit-tips">人大代表</div></td>
+                            </tr>
+                            </tbody></table>
+                        <table cellpadding="0" cellspacing="0" class="note-edit-table">
+                            <tbody><tr style="height:40px;">
+                                <td style="width:60px;"><div class="note-edit-tips">现住址</div></td>
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            </tbody></table>
+                        <table cellpadding="0" cellspacing="0" class="note-edit-table">
+                            <tbody><tr style="height:40px;">
+                                <td style="width:80px;"><div class="note-edit-tips">联系方式</div></td>
+                                <td style=""><div class="note-edit-content"><font id="contact"></font>&nbsp;</div></td>
+                            </tr>
+                            </tbody></table>
+                        <table cellpadding="0" cellspacing="0" class="note-edit-table">
+                            <tbody><tr style="height:40px;">
+                                <td style="width:100px;"><div class="note-edit-tips">户籍所在地</div></td>
+                                <td style=""><div class="note-edit-content"><font id="homePlacr"></font>&nbsp;</div></td>
+                            </tr>
+                            </tbody></table>
+                        
+                        <div  class="note-edit-tips" style="height:80px;">
+                            (口头传唤/被扭送/自动投案的被询问人/询问人于
+                            <u id="ZDTAStartMonth">#ZDTAStartMonth#</u> 月
+                            <u id="ZDTAStartDay">#ZDTAStartDay#</u> 日
+                            <u id="ZDTAStartHour">#ZDTAStartHour#</u> 时
+                            <u id="ZDTAStartMinute">#ZDTAStartMinute#</u> 分到达，
+                            <u id="ZDTAEndMonth">#ZDTAEndMonth#</u> 月
+                            <u id="ZDTAEndDay">#ZDTAEndDay#</u> 日
+                            <u id="ZDTAEndHour">#ZDTAEndHour#</u> 时
+                            <u id="ZDTAEndMinute">#ZDTAEndMinute#</u> 分离开，本人签名确认：
+                            <u id="ZDTASign">#ZDTASign#</u>)
+                        </div>
+                        
+                        <table cellpadding="0" cellspacing="0" class="note-edit-table">
+                            <tbody><tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="table1">记得将基督教的基督教点击对记得将的基督教点击记得将基督教的对</font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="table2">记得将基督教的基督教点击对记得将的基督教点击记得将基督教的对的</font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="table3">记得将基督教的基督教点击对记得将的基督教点击记得将基督教的对的的</font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="table4">记得将基督教的基督教点击对记得将的基督教点击记得将基督教的对的的的</font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="table5">记得将基督教的基督教点击对记得将的基督教点击记得将基督教的对的的的的</font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="table6">记得将基督教的基督教点击对记得将的基督教点击记得将基督教的对的的的的的</font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="table7">记得将基督教的基督教点击对记得将的基督教点击记得将基督教的对的的的的的</font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="table8">记得将基督教的基督教点击对记得将的基督教点击记得将基督教的对的的的的的</font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="table9">记得将基督教的基督教点击对记得将的基督教点击记得将基督教的对的的的的的</font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            <tr style="height:40px;">
+                                <td style=""><div class="note-edit-content"><font id="addrDetail"></font>&nbsp;</div></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        
+                        
+                        
+                        
+                        <!--                <!--第十三行，其他-->
+                        <!--                <table cellpadding="0" cellspacing="0" class="note-edit-table" >-->
+                        <!--                   <tbody> <tr style="height:80px;">-->
+                        <!--                        <td style="width:80px;">-->
+                        <!--                            <div class="note-edit-tips" style="height:80px;"> &nbsp;<u>#OtherInfo#</u></div>-->
+                        <!--                        </td>-->
+                        <!--                    </tr>-->
+                        <!--                    -->
+                        <!--                    </div>-->
+                        <!--                    </tbody>-->
+                        <!--                </table>-->
+                        
+                        
+                    </div>
                 </div>
-
-                <!--<table cellpadding="0" cellspacing="0" class="note-edit-table">-->
-                    <!--<tbody><tr style="height:40px;">-->
-                        <!--<td style=""><div class="note-edit-content">&nbsp;</div></td>-->
-                    <!--</tr>-->
-                    <!--</tbody></table>-->
             </div>
         </div>
-    </div>
-</div>
-</body>
+    </body>
 </html>

@@ -144,24 +144,24 @@ static CGFloat HeaderFooterHeight(CGFloat imageableAreaMargin, CGFloat textHeigh
 }
 
 // 绘制页眉
-- (void)drawHeaderForPageAtIndex:(NSInteger)pageIndex inRect:(CGRect)headerRect {
-    // Specify the header text.
-    NSString *headerText = @"第1次";
-    
-    // Set the desired font.
-    UIFont *font = [UIFont systemFontOfSize:15];
-    // Specify some text attributes we want to apply to the header text.
-    NSDictionary *textAttributes = @{NSFontAttributeName:font,NSForegroundColorAttributeName:[UIColor blackColor],NSKernAttributeName:@7.5};
-    // Calculate the text size.
-    CGSize textSize = [self getTextSize:headerText font:font att:textAttributes];
-    // Determine the offset to the right side.
-    CGFloat offsetX = 20.0;
-    // Specify the point that the text drawing should start from.
-    CGFloat pointX = headerRect.size.width - textSize.width - offsetX;
-    CGFloat pointY = headerRect.size.height/2 - textSize.height/2;
-    // Draw the header text.
-    [headerText drawAtPoint:CGPointMake(pointX, pointY) withAttributes:textAttributes];
-}
+//- (void)drawHeaderForPageAtIndex:(NSInteger)pageIndex inRect:(CGRect)headerRect {
+//    // Specify the header text.
+//    NSString *headerText = @"第1次";
+//    
+//    // Set the desired font.
+//    UIFont *font = [UIFont systemFontOfSize:15];
+//    // Specify some text attributes we want to apply to the header text.
+//    NSDictionary *textAttributes = @{NSFontAttributeName:font,NSForegroundColorAttributeName:[UIColor blackColor],NSKernAttributeName:@7.5};
+//    // Calculate the text size.
+//    CGSize textSize = [self getTextSize:headerText font:font att:textAttributes];
+//    // Determine the offset to the right side.
+//    CGFloat offsetX = 20.0;
+//    // Specify the point that the text drawing should start from.
+//    CGFloat pointX = headerRect.size.width - textSize.width - offsetX;
+//    CGFloat pointY = headerRect.size.height/2 - textSize.height/2;
+//    // Draw the header text.
+//    [headerText drawAtPoint:CGPointMake(pointX, pointY) withAttributes:textAttributes];
+//}
 // 绘制页脚
 - (void)drawFooterForPageAtIndex:(NSInteger)pageIndex inRect:(CGRect)footerRect {
     NSString *footerText = [NSString stringWithFormat:@"第%lu页共%lu页",
